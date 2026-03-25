@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -9,409 +8,408 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-```
 :root {
---sage: #c8d5c0;
---sage-dark: #8fa886;
---sage-deep: #4a6741;
---cream: #f7f4ef;
---warm-white: #fdfcf9;
---charcoal: #2b2b2b;
---muted: #7a7a72;
---accent: #b5705a;
---accent-light: #e8cfc7;
+  --sage: #c8d5c0;
+  --sage-dark: #8fa886;
+  --sage-deep: #4a6741;
+  --cream: #f7f4ef;
+  --warm-white: #fdfcf9;
+  --charcoal: #2b2b2b;
+  --muted: #7a7a72;
+  --accent: #b5705a;
+  --accent-light: #e8cfc7;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-font-family: 'DM Sans', sans-serif;
-background-color: var(--warm-white);
-color: var(--charcoal);
-overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--warm-white);
+  color: var(--charcoal);
+  overflow-x: hidden;
 }
 
 /* ── HERO ── */
 .hero {
-min-height: 100vh;
-display: grid;
-grid-template-columns: 1fr 1fr;
-position: relative;
-overflow: hidden;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-left {
-background-color: var(--sage);
-display: flex;
-flex-direction: column;
-justify-content: center;
-padding: 80px 60px 80px 72px;
-position: relative;
-z-index: 1;
+  background-color: var(--sage);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 80px 72px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-left::after {
-content: '';
-position: absolute;
-right: -40px;
-top: 0;
-bottom: 0;
-width: 80px;
-background-color: var(--sage);
-clip-path: polygon(0 0, 0 100%, 100% 100%);
-z-index: 2;
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  background-color: var(--sage);
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+  z-index: 2;
 }
 
 .hero-right {
-background-color: var(--cream);
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 80px 72px 80px 100px;
-position: relative;
+  background-color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 72px 80px 100px;
+  position: relative;
 }
 
 .brand-tag {
-font-family: 'DM Sans', sans-serif;
-font-size: 11px;
-font-weight: 500;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(--sage-deep);
-margin-bottom: 28px;
-display: flex;
-align-items: center;
-gap: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .brand-tag::before {
-content: '';
-display: block;
-width: 32px;
-height: 1px;
-background: var(--sage-deep);
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--sage-deep);
 }
 
 .hero-headline {
-font-family: 'Cormorant Garamond', serif;
-font-size: clamp(42px, 4.5vw, 64px);
-font-weight: 300;
-line-height: 1.1;
-color: var(--charcoal);
-margin-bottom: 8px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 4.5vw, 64px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--charcoal);
+  margin-bottom: 8px;
 }
 
 .hero-headline em {
-font-style: italic;
-color: var(--sage-deep);
+  font-style: italic;
+  color: var(--sage-deep);
 }
 
 .hero-subhead {
-font-family: 'Cormorant Garamond', serif;
-font-size: clamp(18px, 2vw, 24px);
-font-weight: 300;
-color: var(--charcoal);
-line-height: 1.5;
-margin-bottom: 32px;
-opacity: 0.85;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1.5;
+  margin-bottom: 32px;
+  opacity: 0.85;
 }
 
 .hero-body {
-font-size: 15px;
-line-height: 1.7;
-color: var(--charcoal);
-max-width: 420px;
-margin-bottom: 40px;
-opacity: 0.8;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--charcoal);
+  max-width: 420px;
+  margin-bottom: 40px;
+  opacity: 0.8;
 }
 
 .checklist-preview {
-background: white;
-border-radius: 16px;
-padding: 32px 28px;
-box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-width: 100%;
-max-width: 380px;
-position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 380px;
+  position: relative;
 }
 
 .checklist-preview::before {
-content: 'FREE CHECKLIST';
-position: absolute;
-top: -12px;
-left: 50%;
-transform: translateX(-50%);
-background: var(--accent);
-color: white;
-font-size: 10px;
-font-weight: 500;
-letter-spacing: 0.15em;
-padding: 4px 16px;
-border-radius: 20px;
-white-space: nowrap;
+  content: 'FREE CHECKLIST';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  padding: 4px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 
 .checklist-title {
-font-family: 'Cormorant Garamond', serif;
-font-size: 22px;
-font-weight: 600;
-text-align: center;
-margin-bottom: 20px;
-color: var(--charcoal);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--charcoal);
 }
 
 .checklist-categories {
-display: flex;
-flex-direction: column;
-gap: 8px;
-margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
 }
 
 .cat-pill {
-display: flex;
-align-items: center;
-gap: 10px;
-padding: 8px 14px;
-background: var(--cream);
-border-radius: 8px;
-font-size: 13px;
-font-weight: 400;
-color: var(--charcoal);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: var(--cream);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--charcoal);
 }
 
 .cat-pill .dot {
-width: 8px;
-height: 8px;
-border-radius: 50%;
-background: var(--sage-dark);
-flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sage-dark);
+  flex-shrink: 0;
 }
 
 /* ── FORM ── */
 .opt-in-form {
-display: flex;
-flex-direction: column;
-gap: 12px;
-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
 }
 
 .form-input {
-width: 100%;
-padding: 14px 18px;
-border: 1.5px solid #e0ddd8;
-border-radius: 10px;
-font-family: 'DM Sans', sans-serif;
-font-size: 14px;
-color: var(--charcoal);
-background: var(--warm-white);
-outline: none;
-transition: border-color 0.2s;
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid #e0ddd8;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--charcoal);
+  background: var(--warm-white);
+  outline: none;
+  transition: border-color 0.2s;
 }
 
 .form-input:focus { border-color: var(--sage-dark); }
 .form-input::placeholder { color: #b0aca5; }
 
 .cta-btn {
-width: 100%;
-padding: 16px;
-background: var(--sage-deep);
-color: white;
-border: none;
-border-radius: 10px;
-font-family: 'DM Sans', sans-serif;
-font-size: 14px;
-font-weight: 500;
-letter-spacing: 0.05em;
-cursor: pointer;
-transition: background 0.2s, transform 0.15s;
+  width: 100%;
+  padding: 16px;
+  background: var(--sage-deep);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
 }
 
 .cta-btn:hover { background: #3a5532; transform: translateY(-1px); }
 
 .form-privacy {
-font-size: 11px;
-color: var(--muted);
-text-align: center;
-line-height: 1.5;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
 }
 
 /* ── PAIN SECTION ── */
 .pain-section {
-background: var(--charcoal);
-padding: 100px 72px;
-position: relative;
-overflow: hidden;
+  background: var(--charcoal);
+  padding: 100px 72px;
+  position: relative;
+  overflow: hidden;
 }
 
 .pain-section::before {
-content: '';
-position: absolute;
-top: -60px; right: -60px;
-width: 300px; height: 300px;
-border-radius: 50%;
-background: var(--sage-deep);
-opacity: 0.12;
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: var(--sage-deep);
+  opacity: 0.12;
 }
 
 .section-inner {
-max-width: 1100px;
-margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .section-label {
-font-size: 11px;
-font-weight: 500;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(--sage);
-margin-bottom: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 20px;
 }
 
 .pain-headline {
-font-family: 'Cormorant Garamond', serif;
-font-size: clamp(34px, 3.5vw, 52px);
-font-weight: 300;
-color: white;
-line-height: 1.2;
-max-width: 640px;
-margin-bottom: 60px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.5vw, 52px);
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+  max-width: 640px;
+  margin-bottom: 60px;
 }
 
 .pain-headline em { font-style: italic; color: var(--sage); }
 
 .pain-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 2px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
 }
 
 .pain-card {
-background: rgba(255,255,255,0.04);
-padding: 36px 28px;
-border-left: 1px solid rgba(255,255,255,0.08);
-transition: background 0.2s;
+  background: rgba(255,255,255,0.04);
+  padding: 36px 28px;
+  border-left: 1px solid rgba(255,255,255,0.08);
+  transition: background 0.2s;
 }
 
 .pain-card:first-child { border-left: none; }
 .pain-card:hover { background: rgba(255,255,255,0.07); }
 
 .pain-number {
-font-family: 'Cormorant Garamond', serif;
-font-size: 48px;
-font-weight: 300;
-color: var(--sage);
-opacity: 0.4;
-line-height: 1;
-margin-bottom: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--sage);
+  opacity: 0.4;
+  line-height: 1;
+  margin-bottom: 16px;
 }
 
 .pain-card h3 {
-font-family: 'Cormorant Garamond', serif;
-font-size: 22px;
-font-weight: 400;
-color: white;
-margin-bottom: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 12px;
 }
 
 .pain-card p {
-font-size: 14px;
-line-height: 1.7;
-color: rgba(255,255,255,0.55);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
 }
 
 /* ── WHAT YOU'LL DISCOVER ── */
 .discover-section {
-padding: 100px 72px;
-background: var(--warm-white);
+  padding: 100px 72px;
+  background: var(--warm-white);
 }
 
 .discover-layout {
-max-width: 1100px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 80px;
-align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
 .discover-text .section-label { color: var(--sage-dark); }
 
 .discover-headline {
-font-family: 'Cormorant Garamond', serif;
-font-size: clamp(32px, 3vw, 48px);
-font-weight: 300;
-line-height: 1.2;
-margin-bottom: 24px;
-color: var(--charcoal);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--charcoal);
 }
 
 .discover-headline em { font-style: italic; color: var(--accent); }
 
 .discover-body {
-font-size: 15px;
-line-height: 1.8;
-color: var(--muted);
-margin-bottom: 40px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 40px;
 }
 
 .discover-list {
-list-style: none;
-display: flex;
-flex-direction: column;
-gap: 16px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .discover-list li {
-display: flex;
-gap: 16px;
-align-items: flex-start;
-font-size: 15px;
-line-height: 1.6;
-color: var(--charcoal);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--charcoal);
 }
 
 .discover-list li .icon {
-width: 28px;
-height: 28px;
-border-radius: 50%;
-background: var(--sage);
-display: flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
-margin-top: 1px;
-font-size: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 12px;
 }
 
 .symptom-visual {
-display: flex;
-flex-direction: column;
-gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .symptom-row {
-display: flex;
-align-items: center;
-gap: 14px;
-padding: 16px 20px;
-background: white;
-border-radius: 12px;
-box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
 }
 
 .symptom-row:hover { transform: translateX(6px); }
 
 .symptom-badge {
-font-size: 10px;
-font-weight: 500;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-padding: 4px 10px;
-border-radius: 20px;
-white-space: nowrap;
-min-width: 90px;
-text-align: center;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  min-width: 90px;
+  text-align: center;
 }
 
 .badge-brain { background: #dce8d8; color: #3a5532; }
@@ -421,203 +419,203 @@ text-align: center;
 .badge-mental { background: #d8e4e8; color: #2a5060; }
 
 .symptom-text {
-font-size: 13px;
-color: var(--charcoal);
-line-height: 1.4;
+  font-size: 13px;
+  color: var(--charcoal);
+  line-height: 1.4;
 }
 
 /* ── ABOUT / CREDIBILITY ── */
 .about-section {
-padding: 100px 72px;
-background: var(--cream);
+  padding: 100px 72px;
+  background: var(--cream);
 }
 
 .about-layout {
-max-width: 1100px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1.2fr;
-gap: 80px;
-align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
 }
 
 .about-visual {
-position: relative;
+  position: relative;
 }
 
 .about-card {
-background: white;
-border-radius: 20px;
-padding: 48px 40px;
-box-shadow: 0 12px 48px rgba(0,0,0,0.07);
+  background: white;
+  border-radius: 20px;
+  padding: 48px 40px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.07);
 }
 
 .about-initials {
-width: 72px;
-height: 72px;
-border-radius: 50%;
-background: var(--sage);
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: 'Cormorant Garamond', serif;
-font-size: 28px;
-font-weight: 300;
-color: var(--sage-deep);
-margin-bottom: 20px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--sage-deep);
+  margin-bottom: 20px;
 }
 
 .about-card h3 {
-font-family: 'Cormorant Garamond', serif;
-font-size: 26px;
-font-weight: 400;
-margin-bottom: 4px;
-color: var(--charcoal);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  color: var(--charcoal);
 }
 
 .about-card .credential {
-font-size: 12px;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: var(--sage-dark);
-font-weight: 500;
-margin-bottom: 24px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  font-weight: 500;
+  margin-bottom: 24px;
 }
 
 .about-card p {
-font-size: 14px;
-line-height: 1.8;
-color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
 }
 
 .about-content .section-label { color: var(--sage-dark); }
 
 .about-headline {
-font-family: 'Cormorant Garamond', serif;
-font-size: clamp(28px, 2.8vw, 42px);
-font-weight: 300;
-line-height: 1.25;
-margin-bottom: 24px;
-color: var(--charcoal);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 2.8vw, 42px);
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 24px;
+  color: var(--charcoal);
 }
 
 .about-headline em { font-style: italic; color: var(--sage-deep); }
 
 .about-body {
-font-size: 15px;
-line-height: 1.9;
-color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted);
 }
 
 /* ── FINAL CTA ── */
 .final-cta {
-padding: 120px 72px;
-background: var(--sage-deep);
-text-align: center;
-position: relative;
-overflow: hidden;
+  padding: 120px 72px;
+  background: var(--sage-deep);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .final-cta::before {
-content: '';
-position: absolute;
-bottom: -80px; left: -80px;
-width: 400px; height: 400px;
-border-radius: 50%;
-background: rgba(255,255,255,0.04);
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
 }
 
 .final-cta::after {
-content: '';
-position: absolute;
-top: -60px; right: -40px;
-width: 280px; height: 280px;
-border-radius: 50%;
-background: rgba(255,255,255,0.04);
+  content: '';
+  position: absolute;
+  top: -60px; right: -40px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
 }
 
 .final-cta .section-label { color: var(--sage); opacity: 0.7; }
 
 .final-headline {
-font-family: 'Cormorant Garamond', serif;
-font-size: clamp(36px, 4vw, 58px);
-font-weight: 300;
-color: white;
-line-height: 1.15;
-max-width: 700px;
-margin: 0 auto 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 300;
+  color: white;
+  line-height: 1.15;
+  max-width: 700px;
+  margin: 0 auto 20px;
 }
 
 .final-headline em { font-style: italic; }
 
 .final-sub {
-font-size: 16px;
-color: rgba(255,255,255,0.65);
-margin-bottom: 52px;
-line-height: 1.6;
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 52px;
+  line-height: 1.6;
 }
 
 .final-form {
-display: flex;
-gap: 12px;
-max-width: 480px;
-margin: 0 auto 16px;
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto 16px;
 }
 
 .final-form .form-input {
-background: rgba(255,255,255,0.12);
-border-color: rgba(255,255,255,0.2);
-color: white;
-flex: 1;
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.2);
+  color: white;
+  flex: 1;
 }
 
 .final-form .form-input::placeholder { color: rgba(255,255,255,0.45); }
 .final-form .form-input:focus { border-color: rgba(255,255,255,0.5); }
 
 .final-form .cta-btn {
-background: white;
-color: var(--sage-deep);
-white-space: nowrap;
-padding: 14px 28px;
-width: auto;
+  background: white;
+  color: var(--sage-deep);
+  white-space: nowrap;
+  padding: 14px 28px;
+  width: auto;
 }
 
 .final-form .cta-btn:hover { background: var(--cream); }
 
 .final-privacy {
-font-size: 11px;
-color: rgba(255,255,255,0.4);
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
 }
 
 /* ── FOOTER ── */
 footer {
-padding: 32px 72px;
-background: var(--charcoal);
-display: flex;
-justify-content: space-between;
-align-items: center;
+  padding: 32px 72px;
+  background: var(--charcoal);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 footer .brand {
-font-family: 'Cormorant Garamond', serif;
-font-size: 18px;
-font-weight: 400;
-color: rgba(255,255,255,0.5);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
 }
 
 footer .footer-note {
-font-size: 12px;
-color: rgba(255,255,255,0.3);
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
 }
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(24px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-left > * {
-animation: fadeUp 0.7s ease both;
+  animation: fadeUp 0.7s ease both;
 }
 
 .hero-left .brand-tag { animation-delay: 0.1s; }
@@ -626,233 +624,219 @@ animation: fadeUp 0.7s ease both;
 .hero-left .hero-body { animation-delay: 0.4s; }
 
 .checklist-preview {
-animation: fadeUp 0.7s ease 0.3s both;
+  animation: fadeUp 0.7s ease 0.3s both;
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-.hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
 
-.hero-left {
-padding: 72px 32px 60px;
-clip-path: none;
+  .hero-left {
+    padding: 72px 32px 60px;
+    clip-path: none;
+  }
+
+  .hero-left::after { display: none; }
+
+  .hero-right {
+    padding: 60px 32px 72px;
+    background: var(--warm-white);
+  }
+
+  .pain-section,
+  .discover-section,
+  .about-section,
+  .final-cta { padding: 72px 32px; }
+
+  .pain-grid { grid-template-columns: 1fr; gap: 0; }
+  .pain-card { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+  .pain-card:first-child { border-top: none; }
+
+  .discover-layout,
+  .about-layout { grid-template-columns: 1fr; gap: 48px; }
+
+  .final-form { flex-direction: column; }
+  .final-form .cta-btn { width: 100%; }
+
+  footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 32px; }
 }
-
-.hero-left::after { display: none; }
-
-.hero-right {
-padding: 60px 32px 72px;
-background: var(--warm-white);
-}
-
-.pain-section,
-.discover-section,
-.about-section,
-.final-cta { padding: 72px 32px; }
-
-.pain-grid { grid-template-columns: 1fr; gap: 0; }
-.pain-card { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
-.pain-card:first-child { border-top: none; }
-
-.discover-layout,
-.about-layout { grid-template-columns: 1fr; gap: 48px; }
-
-.final-form { flex-direction: column; }
-.final-form .cta-btn { width: 100%; }
-
-footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 32px; }
-}
-```
-
 </style>
 </head>
 <body>
 
 <!-- ── HERO ── -->
-
 <section class="hero">
-<div class="hero-left">
-<div class="brand-tag">Revive Wellness & Co</div>
-<h1 class="hero-headline">
-Is it your brain —<br>
-or is it your <em>body?</em>
-</h1>
-<p class="hero-subhead">Most women are told it's just stress.<br>It rarely is.</p>
-<p class="hero-body">
-Brain fog, weight changes, mood swings, low energy — these symptoms don't live in silos.
-They're signals. This free checklist helps you see the full picture so you can finally
-start asking the right questions.
-</p>
-</div>
+  <div class="hero-left">
+    <div class="brand-tag">Revive Wellness & Co</div>
+    <h1 class="hero-headline">
+      Is it your brain —<br>
+      or is it your <em>body?</em>
+    </h1>
+    <p class="hero-subhead">Most women are told it's just stress.<br>It rarely is.</p>
+    <p class="hero-body">
+      Brain fog, weight changes, mood swings, low energy — these symptoms don't live in silos.
+      They're signals. This free checklist helps you see the full picture so you can finally
+      start asking the right questions.
+    </p>
+  </div>
 
-```
-<div class="hero-right">
-<div class="checklist-preview">
-<div class="checklist-title">Brain & Metabolic Checklist</div>
-<div class="checklist-categories">
-<div class="cat-pill"><span class="dot"></span>Brain Health</div>
-<div class="cat-pill"><span class="dot"></span>Metabolic</div>
-<div class="cat-pill"><span class="dot"></span>PCOS</div>
-<div class="cat-pill"><span class="dot"></span>Menopausal</div>
-<div class="cat-pill"><span class="dot"></span>Mental Wellness</div>
-</div>
-<form class="opt-in-form" onsubmit="return false;">
-<input class="form-input" type="text" placeholder="First name" />
-<input class="form-input" type="email" placeholder="Email address" />
-<button class="cta-btn" type="submit">Send Me the Free Checklist →</button>
-</form>
-<p class="form-privacy" style="margin-top: 12px;">No spam, ever. Unsubscribe anytime.</p>
-</div>
-</div>
-```
-
+  <div class="hero-right">
+    <div class="checklist-preview">
+      <div class="checklist-title">Brain & Metabolic Checklist</div>
+      <div class="checklist-categories">
+        <div class="cat-pill"><span class="dot"></span>Brain Health</div>
+        <div class="cat-pill"><span class="dot"></span>Metabolic</div>
+        <div class="cat-pill"><span class="dot"></span>PCOS</div>
+        <div class="cat-pill"><span class="dot"></span>Menopausal</div>
+        <div class="cat-pill"><span class="dot"></span>Mental Wellness</div>
+      </div>
+      <form class="opt-in-form" onsubmit="return false;">
+        <input class="form-input" type="text" placeholder="First name" />
+        <input class="form-input" type="email" placeholder="Email address" />
+        <button class="cta-btn" type="submit">Send Me the Free Checklist →</button>
+      </form>
+      <p class="form-privacy" style="margin-top: 12px;">No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ── PAIN SECTION ── -->
-
 <section class="pain-section">
-<div class="section-inner">
-<div class="section-label">You are not imagining it</div>
-<h2 class="pain-headline">
-These symptoms are connected —<br>
-and <em>treatable</em> when you know where to look.
-</h2>
-<div class="pain-grid">
-<div class="pain-card">
-<div class="pain-number">01</div>
-<h3>The fog is real</h3>
-<p>Difficulty concentrating, memory lapses, and mental fatigue aren't just "getting older." They're often metabolic, hormonal, or neurological signals worth exploring.</p>
-</div>
-<div class="pain-card">
-<div class="pain-number">02</div>
-<h3>Your body is communicating</h3>
-<p>Weight shifts, energy crashes, skin changes, and cycle irregularities are your body's way of asking for attention — not proof that you need to try harder.</p>
-</div>
-<div class="pain-card">
-<div class="pain-number">03</div>
-<h3>Mental health is physical health</h3>
-<p>Mood, anxiety, and emotional resilience are deeply tied to what's happening in your hormones and gut. An integrative lens changes everything.</p>
-</div>
-</div>
-</div>
+  <div class="section-inner">
+    <div class="section-label">You are not imagining it</div>
+    <h2 class="pain-headline">
+      These symptoms are connected —<br>
+      and <em>treatable</em> when you know where to look.
+    </h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-number">01</div>
+        <h3>The fog is real</h3>
+        <p>Difficulty concentrating, memory lapses, and mental fatigue aren't just "getting older." They're often metabolic, hormonal, or neurological signals worth exploring.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-number">02</div>
+        <h3>Your body is communicating</h3>
+        <p>Weight shifts, energy crashes, skin changes, and cycle irregularities are your body's way of asking for attention — not proof that you need to try harder.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-number">03</div>
+        <h3>Mental health is physical health</h3>
+        <p>Mood, anxiety, and emotional resilience are deeply tied to what's happening in your hormones and gut. An integrative lens changes everything.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ── WHAT YOU'LL DISCOVER ── -->
-
 <section class="discover-section">
-<div class="discover-layout">
-<div class="discover-text">
-<div class="section-label">What's inside</div>
-<h2 class="discover-headline">
-Rate your symptoms.<br>
-See the <em>patterns.</em>
-</h2>
-<p class="discover-body">
-This checklist walks you through five interconnected areas of health — the same ones
-that are most commonly misunderstood or dismissed. Rate each item on a simple 0–4 scale
-and walk away with clarity you've probably been chasing for years.
-</p>
-<ul class="discover-list">
-<li>
-<span class="icon">✓</span>
-<span>Identify which symptom clusters are most active for you right now</span>
-</li>
-<li>
-<span class="icon">✓</span>
-<span>Understand how brain, metabolic, and hormonal health overlap</span>
-</li>
-<li>
-<span class="icon">✓</span>
-<span>Come to your next appointment (or discovery call) with real language for what you're experiencing</span>
-</li>
-<li>
-<span class="icon">✓</span>
-<span>Stop second-guessing yourself — your symptoms are telling a story</span>
-</li>
-</ul>
-</div>
+  <div class="discover-layout">
+    <div class="discover-text">
+      <div class="section-label">What's inside</div>
+      <h2 class="discover-headline">
+        Rate your symptoms.<br>
+        See the <em>patterns.</em>
+      </h2>
+      <p class="discover-body">
+        This checklist walks you through five interconnected areas of health — the same ones
+        that are most commonly misunderstood or dismissed. Rate each item on a simple 0–4 scale
+        and walk away with clarity you've probably been chasing for years.
+      </p>
+      <ul class="discover-list">
+        <li>
+          <span class="icon">✓</span>
+          <span>Identify which symptom clusters are most active for you right now</span>
+        </li>
+        <li>
+          <span class="icon">✓</span>
+          <span>Understand how brain, metabolic, and hormonal health overlap</span>
+        </li>
+        <li>
+          <span class="icon">✓</span>
+          <span>Come to your next appointment (or discovery call) with real language for what you're experiencing</span>
+        </li>
+        <li>
+          <span class="icon">✓</span>
+          <span>Stop second-guessing yourself — your symptoms are telling a story</span>
+        </li>
+      </ul>
+    </div>
 
-```
-<div class="symptom-visual">
-<div class="symptom-row">
-<span class="symptom-badge badge-brain">Brain Health</span>
-<span class="symptom-text">Trouble focusing, mental fatigue, mood swings, anxiety at night</span>
-</div>
-<div class="symptom-row">
-<span class="symptom-badge badge-metabolic">Metabolic</span>
-<span class="symptom-text">Unexplained weight changes, sugar cravings, tired after meals</span>
-</div>
-<div class="symptom-row">
-<span class="symptom-badge badge-pcos">PCOS</span>
-<span class="symptom-text">Irregular cycles, hair shedding, persistent acne, "wired but tired"</span>
-</div>
-<div class="symptom-row">
-<span class="symptom-badge badge-menopause">Menopausal</span>
-<span class="symptom-text">Hot flashes, sleep disruption, mood unpredictability, libido shifts</span>
-</div>
-<div class="symptom-row">
-<span class="symptom-badge badge-mental">Mental</span>
-<span class="symptom-text">Emotional depletion, low motivation, physical symptoms of stress</span>
-</div>
-</div>
-</div>
-```
-
+    <div class="symptom-visual">
+      <div class="symptom-row">
+        <span class="symptom-badge badge-brain">Brain Health</span>
+        <span class="symptom-text">Trouble focusing, mental fatigue, mood swings, anxiety at night</span>
+      </div>
+      <div class="symptom-row">
+        <span class="symptom-badge badge-metabolic">Metabolic</span>
+        <span class="symptom-text">Unexplained weight changes, sugar cravings, tired after meals</span>
+      </div>
+      <div class="symptom-row">
+        <span class="symptom-badge badge-pcos">PCOS</span>
+        <span class="symptom-text">Irregular cycles, hair shedding, persistent acne, "wired but tired"</span>
+      </div>
+      <div class="symptom-row">
+        <span class="symptom-badge badge-menopause">Menopausal</span>
+        <span class="symptom-text">Hot flashes, sleep disruption, mood unpredictability, libido shifts</span>
+      </div>
+      <div class="symptom-row">
+        <span class="symptom-badge badge-mental">Mental</span>
+        <span class="symptom-text">Emotional depletion, low motivation, physical symptoms of stress</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ── ABOUT ── -->
-
 <section class="about-section">
-<div class="about-layout">
-<div class="about-visual">
-<div class="about-card">
-<div class="about-initials">RW</div>
-<h3>Revive Wellness & Co</h3>
-<div class="credential">Psychiatric Nurse Practitioner · Integrative Care</div>
-<p>
-We take a whole-person approach to mental and metabolic wellness — because your brain
-doesn't function in isolation from your body. Our practice blends psychiatric expertise
-with integrative care to address the root causes, not just the symptoms.
-</p>
-</div>
-</div>
-<div class="about-content">
-<div class="section-label">Why this matters</div>
-<h2 class="about-headline">
-You deserve a provider who looks at the <em>whole picture.</em>
-</h2>
-<p class="about-body">
-Too many women leave appointments feeling unheard — or worse, leaving with a prescription
-that addresses one symptom while the root cause goes untouched.<br><br>
-This checklist is the first step toward a different kind of care. It's designed to open
-a real conversation — one where your symptoms are taken seriously, connected thoughtfully,
-and addressed with an approach that actually fits your life.
-</p>
-</div>
-</div>
+  <div class="about-layout">
+    <div class="about-visual">
+      <div class="about-card">
+        <div class="about-initials">RW</div>
+        <h3>Revive Wellness & Co</h3>
+        <div class="credential">Psychiatric Nurse Practitioner · Integrative Care</div>
+        <p>
+          We take a whole-person approach to mental and metabolic wellness — because your brain
+          doesn't function in isolation from your body. Our practice blends psychiatric expertise
+          with integrative care to address the root causes, not just the symptoms.
+        </p>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="section-label">Why this matters</div>
+      <h2 class="about-headline">
+        You deserve a provider who looks at the <em>whole picture.</em>
+      </h2>
+      <p class="about-body">
+        Too many women leave appointments feeling unheard — or worse, leaving with a prescription
+        that addresses one symptom while the root cause goes untouched.<br><br>
+        This checklist is the first step toward a different kind of care. It's designed to open
+        a real conversation — one where your symptoms are taken seriously, connected thoughtfully,
+        and addressed with an approach that actually fits your life.
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- ── FINAL CTA ── -->
-
 <section class="final-cta">
-<div class="section-label">Take the first step</div>
-<h2 class="final-headline">
-Your symptoms have been trying to<br>
-tell you something. <em>Let's listen.</em>
-</h2>
-<p class="final-sub">Get the free Brain & Metabolic Checklist — delivered instantly to your inbox.</p>
-<form class="final-form" onsubmit="return false;">
-<input class="form-input" type="email" placeholder="Your email address" />
-<button class="cta-btn" type="submit">Get the Checklist →</button>
-</form>
-<p class="final-privacy">No spam. Just support. Unsubscribe anytime.</p>
+  <div class="section-label">Take the first step</div>
+  <h2 class="final-headline">
+    Your symptoms have been trying to<br>
+    tell you something. <em>Let's listen.</em>
+  </h2>
+  <p class="final-sub">Get the free Brain & Metabolic Checklist — delivered instantly to your inbox.</p>
+  <form class="final-form" onsubmit="return false;">
+    <input class="form-input" type="email" placeholder="Your email address" />
+    <button class="cta-btn" type="submit">Get the Checklist →</button>
+  </form>
+  <p class="final-privacy">No spam. Just support. Unsubscribe anytime.</p>
 </section>
 
 <!-- ── FOOTER ── -->
-
 <footer>
-<div class="brand">Revive Wellness & Co</div>
-<div class="footer-note">© 2026 · This checklist is for informational purposes and does not constitute medical advice.</div>
+  <div class="brand">Revive Wellness & Co</div>
+  <div class="footer-note">© 2026 · This checklist is for informational purposes and does not constitute medical advice.</div>
 </footer>
 
 </body>
