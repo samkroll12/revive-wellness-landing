@@ -185,54 +185,6 @@ body {
   flex-shrink: 0;
 }
 
-/* ── FORM ── */
-.opt-in-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-}
-
-.form-input {
-  width: 100%;
-  padding: 14px 18px;
-  border: 1.5px solid #e0ddd8;
-  border-radius: 10px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  color: var(--charcoal);
-  background: var(--warm-white);
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-input:focus { border-color: var(--sage-dark); }
-.form-input::placeholder { color: #b0aca5; }
-
-.cta-btn {
-  width: 100%;
-  padding: 16px;
-  background: var(--sage-deep);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-}
-
-.cta-btn:hover { background: #3a5532; transform: translateY(-1px); }
-
-.form-privacy {
-  font-size: 11px;
-  color: var(--muted);
-  text-align: center;
-  line-height: 1.5;
-}
-
 /* ── PAIN SECTION ── */
 .pain-section {
   background: var(--charcoal);
@@ -439,9 +391,7 @@ body {
   align-items: center;
 }
 
-.about-visual {
-  position: relative;
-}
+.about-visual { position: relative; }
 
 .about-card {
   background: white;
@@ -555,36 +505,11 @@ body {
   line-height: 1.6;
 }
 
-.final-form {
-  display: flex;
-  gap: 12px;
+.final-kit-wrap {
   max-width: 480px;
-  margin: 0 auto 16px;
-}
-
-.final-form .form-input {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.2);
-  color: white;
-  flex: 1;
-}
-
-.final-form .form-input::placeholder { color: rgba(255,255,255,0.45); }
-.final-form .form-input:focus { border-color: rgba(255,255,255,0.5); }
-
-.final-form .cta-btn {
-  background: white;
-  color: var(--sage-deep);
-  white-space: nowrap;
-  padding: 14px 28px;
-  width: auto;
-}
-
-.final-form .cta-btn:hover { background: var(--cream); }
-
-.final-privacy {
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* ── FOOTER ── */
@@ -614,50 +539,24 @@ footer .footer-note {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.hero-left > * {
-  animation: fadeUp 0.7s ease both;
-}
-
+.hero-left > * { animation: fadeUp 0.7s ease both; }
 .hero-left .brand-tag { animation-delay: 0.1s; }
 .hero-left .hero-headline { animation-delay: 0.2s; }
 .hero-left .hero-subhead { animation-delay: 0.3s; }
 .hero-left .hero-body { animation-delay: 0.4s; }
-
-.checklist-preview {
-  animation: fadeUp 0.7s ease 0.3s both;
-}
+.checklist-preview { animation: fadeUp 0.7s ease 0.3s both; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; min-height: auto; }
-
-  .hero-left {
-    padding: 72px 32px 60px;
-    clip-path: none;
-  }
-
+  .hero-left { padding: 72px 32px 60px; clip-path: none; }
   .hero-left::after { display: none; }
-
-  .hero-right {
-    padding: 60px 32px 72px;
-    background: var(--warm-white);
-  }
-
-  .pain-section,
-  .discover-section,
-  .about-section,
-  .final-cta { padding: 72px 32px; }
-
+  .hero-right { padding: 60px 32px 72px; background: var(--warm-white); }
+  .pain-section, .discover-section, .about-section, .final-cta { padding: 72px 32px; }
   .pain-grid { grid-template-columns: 1fr; gap: 0; }
   .pain-card { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
   .pain-card:first-child { border-top: none; }
-
-  .discover-layout,
-  .about-layout { grid-template-columns: 1fr; gap: 48px; }
-
-  .final-form { flex-direction: column; }
-  .final-form .cta-btn { width: 100%; }
-
+  .discover-layout, .about-layout { grid-template-columns: 1fr; gap: 48px; }
   footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 32px; }
 }
 </style>
@@ -690,12 +589,8 @@ footer .footer-note {
         <div class="cat-pill"><span class="dot"></span>Menopausal</div>
         <div class="cat-pill"><span class="dot"></span>Mental Wellness</div>
       </div>
-      <form class="opt-in-form" onsubmit="return false;">
-        <input class="form-input" type="text" placeholder="First name" />
-        <input class="form-input" type="email" placeholder="Email address" />
-        <button class="cta-btn" type="submit">Send Me the Free Checklist →</button>
-      </form>
-      <p class="form-privacy" style="margin-top: 12px;">No spam, ever. Unsubscribe anytime.</p>
+      <!-- Kit inline form -->
+      <div data-uid="3f5517a5c5"></div>
     </div>
   </div>
 </section>
@@ -743,22 +638,10 @@ footer .footer-note {
         and walk away with clarity you've probably been chasing for years.
       </p>
       <ul class="discover-list">
-        <li>
-          <span class="icon">✓</span>
-          <span>Identify which symptom clusters are most active for you right now</span>
-        </li>
-        <li>
-          <span class="icon">✓</span>
-          <span>Understand how brain, metabolic, and hormonal health overlap</span>
-        </li>
-        <li>
-          <span class="icon">✓</span>
-          <span>Come to your next appointment (or discovery call) with real language for what you're experiencing</span>
-        </li>
-        <li>
-          <span class="icon">✓</span>
-          <span>Stop second-guessing yourself — your symptoms are telling a story</span>
-        </li>
+        <li><span class="icon">✓</span><span>Identify which symptom clusters are most active for you right now</span></li>
+        <li><span class="icon">✓</span><span>Understand how brain, metabolic, and hormonal health overlap</span></li>
+        <li><span class="icon">✓</span><span>Come to your next appointment (or discovery call) with real language for what you're experiencing</span></li>
+        <li><span class="icon">✓</span><span>Stop second-guessing yourself — your symptoms are telling a story</span></li>
       </ul>
     </div>
 
@@ -826,11 +709,10 @@ footer .footer-note {
     tell you something. <em>Let's listen.</em>
   </h2>
   <p class="final-sub">Get the free Brain & Metabolic Checklist — delivered instantly to your inbox.</p>
-  <form class="final-form" onsubmit="return false;">
-    <input class="form-input" type="email" placeholder="Your email address" />
-    <button class="cta-btn" type="submit">Get the Checklist →</button>
-  </form>
-  <p class="final-privacy">No spam. Just support. Unsubscribe anytime.</p>
+  <!-- Kit inline form -->
+  <div class="final-kit-wrap">
+    <div data-uid="3f5517a5c5"></div>
+  </div>
 </section>
 
 <!-- ── FOOTER ── -->
@@ -838,6 +720,9 @@ footer .footer-note {
   <div class="brand">Revive Wellness & Co</div>
   <div class="footer-note">© 2026 · This checklist is for informational purposes and does not constitute medical advice.</div>
 </footer>
+
+<!-- Kit script — loads once, powers both forms above -->
+<script async data-uid="3f5517a5c5" src="https://revive-wellness-co.kit.com/3f5517a5c5/index.js"></script>
 
 </body>
 </html>
