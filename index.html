@@ -185,6 +185,73 @@ body {
   flex-shrink: 0;
 }
 
+/* ── FORM ── */
+.opt-in-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid #e0ddd8;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--charcoal);
+  background: var(--warm-white);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus { border-color: var(--sage-dark); }
+.form-input::placeholder { color: #b0aca5; }
+
+.cta-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--sage-deep);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.cta-btn:hover { background: #3a5532; transform: translateY(-1px); }
+.cta-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+.form-privacy {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.form-message {
+  font-size: 13px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  display: none;
+}
+.form-message.success {
+  background: #dce8d8;
+  color: #3a5532;
+  display: block;
+}
+.form-message.error {
+  background: #f5e0db;
+  color: #8b3a2a;
+  display: block;
+}
+
 /* ── PAIN SECTION ── */
 .pain-section {
   background: var(--charcoal);
@@ -505,11 +572,56 @@ body {
   line-height: 1.6;
 }
 
-.final-kit-wrap {
+.final-form {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto 16px;
+}
+
+.final-form .form-input {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.2);
+  color: white;
+  flex: 1;
+}
+
+.final-form .form-input::placeholder { color: rgba(255,255,255,0.45); }
+.final-form .form-input:focus { border-color: rgba(255,255,255,0.5); }
+
+.final-form .cta-btn {
+  background: white;
+  color: var(--sage-deep);
+  white-space: nowrap;
+  padding: 14px 28px;
+  width: auto;
+}
+
+.final-form .cta-btn:hover { background: var(--cream); }
+
+.final-privacy {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+}
+
+.final-message {
+  font-size: 13px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
   max-width: 480px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
+  display: none;
+}
+.final-message.success {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  display: block;
+}
+.final-message.error {
+  background: rgba(255,100,100,0.2);
+  color: white;
+  display: block;
 }
 
 /* ── FOOTER ── */
@@ -557,6 +669,8 @@ footer .footer-note {
   .pain-card { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
   .pain-card:first-child { border-top: none; }
   .discover-layout, .about-layout { grid-template-columns: 1fr; gap: 48px; }
+  .final-form { flex-direction: column; }
+  .final-form .cta-btn { width: 100%; }
   footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 32px; }
 }
 </style>
@@ -589,8 +703,13 @@ footer .footer-note {
         <div class="cat-pill"><span class="dot"></span>Menopausal</div>
         <div class="cat-pill"><span class="dot"></span>Mental Wellness</div>
       </div>
-      <!-- Kit inline form -->
-      <div data-uid="3f5517a5c5"></div>
+      <form class="opt-in-form" id="hero-form">
+        <input class="form-input" type="text" id="hero-first-name" placeholder="First name" required />
+        <input class="form-input" type="email" id="hero-email" placeholder="Email address" required />
+        <button class="cta-btn" type="submit">Send Me the Free Checklist →</button>
+        <div class="form-message" id="hero-message"></div>
+      </form>
+      <p class="form-privacy" style="margin-top: 12px;">No spam, ever. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>
@@ -709,10 +828,12 @@ footer .footer-note {
     tell you something. <em>Let's listen.</em>
   </h2>
   <p class="final-sub">Get the free Brain & Metabolic Checklist — delivered instantly to your inbox.</p>
-  <!-- Kit inline form -->
-  <div class="final-kit-wrap">
-    <div data-uid="3f5517a5c5"></div>
-  </div>
+  <form class="final-form" id="final-form">
+    <input class="form-input" type="email" id="final-email" placeholder="Your email address" required />
+    <button class="cta-btn" type="submit">Get the Checklist →</button>
+  </form>
+  <div class="final-message" id="final-message"></div>
+  <p class="final-privacy" style="margin-top: 16px;">No spam. Just support. Unsubscribe anytime.</p>
 </section>
 
 <!-- ── FOOTER ── -->
@@ -721,8 +842,86 @@ footer .footer-note {
   <div class="footer-note">© 2026 · This checklist is for informational purposes and does not constitute medical advice.</div>
 </footer>
 
-<!-- Kit script — loads once, powers both forms above -->
-<script async data-uid="3f5517a5c5" src="https://revive-wellness-co.kit.com/3f5517a5c5/index.js"></script>
+<script>
+  const KIT_API_KEY = 'kay5mFY1zmcBP-iR3Z2ilg';
+  const KIT_FORM_ID = '9252692';
+
+  async function subscribeToKit(email, firstName) {
+    const response = await fetch(`https://api.kit.com/v4/forms/${KIT_FORM_ID}/subscribers`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Kit-Api-Key': KIT_API_KEY
+      },
+      body: JSON.stringify({
+        email_address: email,
+        first_name: firstName || ''
+      })
+    });
+    return response;
+  }
+
+  // Hero form
+  document.getElementById('hero-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const msg = document.getElementById('hero-message');
+    const email = document.getElementById('hero-email').value;
+    const firstName = document.getElementById('hero-first-name').value;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    msg.className = 'form-message';
+    msg.style.display = 'none';
+
+    try {
+      const res = await subscribeToKit(email, firstName);
+      if (res.ok) {
+        msg.textContent = '✓ Check your inbox! The checklist is on its way.';
+        msg.className = 'form-message success';
+        this.reset();
+      } else {
+        throw new Error('Subscription failed');
+      }
+    } catch (err) {
+      msg.textContent = 'Something went wrong. Please try again.';
+      msg.className = 'form-message error';
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Send Me the Free Checklist →';
+  });
+
+  // Final CTA form
+  document.getElementById('final-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const msg = document.getElementById('final-message');
+    const email = document.getElementById('final-email').value;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    msg.className = 'final-message';
+    msg.style.display = 'none';
+
+    try {
+      const res = await subscribeToKit(email, '');
+      if (res.ok) {
+        msg.textContent = '✓ Check your inbox! The checklist is on its way.';
+        msg.className = 'final-message success';
+        this.reset();
+      } else {
+        throw new Error('Subscription failed');
+      }
+    } catch (err) {
+      msg.textContent = 'Something went wrong. Please try again.';
+      msg.className = 'final-message error';
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Get the Checklist →';
+  });
+</script>
 
 </body>
 </html>
